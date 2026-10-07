@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khủng Long Mất Mạng</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #dff3ff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-box {
+  width: min(900px, 95vw);
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 10px;
+  color: #263238;
+}
+
+.score {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#game {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: linear-gradient(#8ed6ff, #eaf9ff);
+  border: 3px solid #263238;
+}
+
+.sun {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #ffd54f;
+  border-radius: 50%;
+  top: 30px;
+  right: 50px;
+}
+
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background: white;
+  border-radius: 30px;
+  top: 70px;
+  left: 80px;
+  opacity: .9;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 45px;
+  height: 45px;
+  left: 15px;
+  top: -20px;
+}
+
+.cloud::after {
+  width: 55px;
+  height: 55px;
+  right: 10px;
+  top: -28px;
+}
+
+/* DINO */
+#dino {
+  position: absolute;
+  width: 70px;
+  height: 75px;
+  left: 70px;
+  bottom: 45px;
+  z-index: 5;
+}
+
+.dino-body {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: #43a047;
+  left: 15px;
+  top: 25px;
+  border-radius: 12px 15px 8px 8px;
+}
+
+.dino-head {
+  position: absolute;
+  width: 42px;
+  height: 38px;
+  background: #43a047;
+  right: 0;
+  top: 5px;
+  border-radius: 8px 15px 8px 5px;
+}
+
+.dino-eye {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #111;
+  right: 8px;
+  top: 10px;
+  border-radius: 50%;
+}
+
+.dino-tail {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background: #43a047;
+  left: 0;
+  top: 38px;
+  transform: rotate(-25deg);
+  border-radius: 10px;
+}
+
+.dino-leg {
+  position: absolute;
+  width: 12px;
+  height: 25px;
+  background: #2e7d32;
+  bottom: 0;
